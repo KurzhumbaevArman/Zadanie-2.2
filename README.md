@@ -12,7 +12,7 @@ Zadanie-2.2
   
 
 ####Пример работы программы:
-<a target="_blank" href="http://fastpic.ru"><img src="http://i66.fastpic.ru/big/2014/0721/f3/e5370dfe37c3168e9e1bd0f710b1e8f3.jpg" border="0"></a>
+<a target="_blank" href="http://fastpic.ru"><img src="http://i65.fastpic.ru/big/2014/0721/ae/246bd8ef583b8766290354d9566ad3ae.jpg" border="0"></a>
 
 
 ######Источники:
