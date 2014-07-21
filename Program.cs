@@ -59,10 +59,7 @@ namespace Date_z_2_2
                   new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
                   new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
                   new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
-                  // new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) },
+                //new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) },
               //    new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) },
                   //new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) },
                   //new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) },
@@ -91,21 +88,22 @@ namespace Date_z_2_2
                 default: Console.WriteLine("Критерий задан неправильно"); break;
             }
             //Вставка нового элемента
-            Console.WriteLine("Добавление нового элемента.Введите дата (Пример: 15 Июля 1998): ");
+            Console.Write("Добавление нового элемента.Введите дата (Пример: 15 Июля 1998): ");
             string new_element = Console.ReadLine();
             DateTime dt = Convert.ToDateTime(new_element);           
             dateList.Add(new Date(name_month[dt.Month-1]) { Day = dt.Day, Year = dt.Year });
             Console.WriteLine("\nСписок с добавленным в конец элементом");
             StaticDate.PrintList(dateList);
             //Вставка элемента в заданную позицию
-            Console.WriteLine("Введите номер позиции,в которую будет вставлен новый случайный элемент: ");
+            Console.Write("Введите номер позиции,в которую будет вставлен новый случайный элемент: ");
             int nata = int.Parse(Console.ReadLine())-1;
             dateList.Insert(nata, new Date(name_month[random.Next(0, 11)]) { Day = random.Next(1, 31), Year = random.Next(1981, 2014) });
             Console.WriteLine("\nСписок со вставленным элементом в указанную позицию");
             StaticDate.PrintList(dateList);
             //Удаление элемента списка, вставленный ранее
             dateList.RemoveAt(nata);
-            Console.WriteLine("\nСписок с удаленным вставленным элементом");
+            dateList.RemoveAt(6);
+            Console.WriteLine("\nСписок с удаленными вставленными элементоми");
             StaticDate.PrintList(dateList);
             //Поиск элемента списка
             Console.Write("Введите месяц для поиска : ");
