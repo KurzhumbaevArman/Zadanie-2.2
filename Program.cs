@@ -103,7 +103,7 @@ namespace Date_z_2_2
             //Удаление элемента списка, вставленный ранее
             dateList.RemoveAt(nata);
             dateList.RemoveAt(6);
-            Console.WriteLine("\nСписок с удаленными вставленными элементоми");
+            Console.WriteLine("\nСписок с удаленными вставленными элементами");
             StaticDate.PrintList(dateList);
             //Поиск элемента списка
             Console.Write("Введите месяц для поиска : ");
