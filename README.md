@@ -13,3 +13,7 @@ Zadanie-2.2
 
 ####Пример работы программы:
 <a target="_blank" href="http://fastpic.ru"><img src="http://i66.fastpic.ru/big/2014/0721/f3/e5370dfe37c3168e9e1bd0f710b1e8f3.jpg" border="0"></a>
+
+
+######Источники:
+1)Преобразование строки в значение типа "DateTime" (Руководство по программированию в C#) - http://msdn.microsoft.com/ru-ru/library/cc165448.aspx
