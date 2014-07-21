@@ -17,12 +17,10 @@ namespace Date_z_2_2
             if (month.Length > 0) _month = month;
             else _month = "NoName";
         }
-        //Метод
         public void Print()
         {
             Console.WriteLine(" {0,2} / {1,-8} / {2,4} г.", _day, _month, _year);
         }
-        //Свойства
         public string Month
         {
             set { _month = Convert.ToString(value); }
@@ -51,19 +49,19 @@ namespace Date_z_2_2
         static void Main(string[] args)
         {
             string[] name_month = { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
-            //Создадим пустой список
+            //
             Random random = new Random();
             List<Date> dateList = new List<Date>
             {
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
-                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1991, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
+                  new Date(name_month[random.Next(0,11)]) { Day = random.Next(1, 30), Year = random.Next(1981, 2014) },
                   // new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) },
               //    new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) },
                   //new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) },
@@ -71,14 +69,13 @@ namespace Date_z_2_2
                   //new Date(Console.ReadLine()) { Day = int.Parse(Console.ReadLine()), Year = int.Parse(Console.ReadLine()) }
             };
             //Вывод на экран исходного списка
-            Console.WriteLine("Список:");
+            Console.WriteLine("Первоначальный список:");
             StaticDate.PrintList(dateList);
-
             //Сортировка в обратном направлении 
             Console.WriteLine("\nСписок в обратном порядке:");
             dateList.Reverse();
             StaticDate.PrintList(dateList);
-            //Сортировка списка по одному из членов класса
+            //Сортировка списка по выбранному критерию
             Console.Write("Введите критерий сортировки (День,Месяц,Год): ");
             switch (Console.ReadLine())
             {
@@ -93,17 +90,17 @@ namespace Date_z_2_2
                     StaticDate.PrintList(dateList.OrderBy(h => h.Year).ToList());break;
                 default: Console.WriteLine("Критерий задан неправильно"); break;
             }
-            //Новый элемент в список
+            //Вставка нового элемента
             Console.WriteLine("Добавление нового элемента.Введите дата (Пример: 15 Июля 1998): ");
             string new_element = Console.ReadLine();
             DateTime dt = Convert.ToDateTime(new_element);           
             dateList.Add(new Date(name_month[dt.Month-1]) { Day = dt.Day, Year = dt.Year });
             Console.WriteLine("\nСписок с добавленным в конец элементом");
             StaticDate.PrintList(dateList);
-            //Вставим в список элемент в заданную позицию
+            //Вставка элемента в заданную позицию
             Console.WriteLine("Введите номер позиции,в которую будет вставлен новый случайный элемент: ");
             int nata = int.Parse(Console.ReadLine())-1;
-            dateList.Insert(nata, new Date(name_month[random.Next(0, 11)]) { Day = random.Next(160, 180), Year = random.Next(50, 90) });
+            dateList.Insert(nata, new Date(name_month[random.Next(0, 11)]) { Day = random.Next(1, 31), Year = random.Next(1981, 2014) });
             Console.WriteLine("\nСписок со вставленным элементом в указанную позицию");
             StaticDate.PrintList(dateList);
             //Удаление элемента списка, вставленный ранее
